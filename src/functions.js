@@ -76,5 +76,8 @@ function GitLog(hash, date, message) {
 */
 
 //your code here
+function parseGit(logArray){
 
+	return;
+}
 //end your code

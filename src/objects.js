@@ -8,9 +8,15 @@
 * @return {object} - the object literal
 */
 
+var random = {	type: "Goldfish",
+				brand: "Pepperidge Farm", 
+				flavor: "Cheddar",
+				count: 2000,
+}
+
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  return random; //Modify ONLY this line
   //end your code
 }
 
