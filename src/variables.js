@@ -29,7 +29,15 @@ false otherwise
 */
 function isString(b) {
   //your code here
-  return undefined;
+  if(){
+
+    return true;
+  }
+  else if (){
+
+
+    return false;
+  }
   //end your code
 }
 
