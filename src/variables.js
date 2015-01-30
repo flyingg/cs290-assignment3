@@ -29,15 +29,7 @@ false otherwise
 */
 function isString(b) {
   //your code here
-  if(){
-
-    return true;
-  }
-  else if (){
-
-
-    return false;
-  }
+  return undefined;
   //end your code
 }
 
@@ -50,6 +42,11 @@ return true if c is null, false otherwise
 */
 function isNull(c) {
   //your code here
-  return undefined;
+  if (c === null){
+    return true;
+  }
+  else if (c != null){
+    return false;
+  }
   //end your code
 }
