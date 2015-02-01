@@ -1,4 +1,4 @@
-/**
+/** GERALD GALE - W2015
 * the \@param notation indicates an input paramater for a function. For example
 * @param {string} foobar - indicates the function should accept a string
 * and it should be called foobar, for example function(foobar){}

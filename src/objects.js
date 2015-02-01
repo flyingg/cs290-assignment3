@@ -1,4 +1,4 @@
-/**
+/** GERALD GALE - W2015
 * Create an object literal with the following key value pairs:
 * type: {string} 'Goldfish'
 * brand: {string} 'Pepperidge Farm'
@@ -8,10 +8,11 @@
 * @return {object} - the object literal
 */
 
-var random = {	type: "Goldfish",
-				brand: "Pepperidge Farm", 
-				flavor: "Cheddar",
-				count: 2000,
+var random = {	
+	type: "Goldfish",
+	brand: "Pepperidge Farm", 
+	flavor: "Cheddar",
+	count: 2000,
 }
 
 function returnObjectLiteral() {
@@ -53,9 +54,9 @@ function MessageLog(user){
 
 MessageLog.prototype.logMessage = function(messageText, direction){
 	if (direction == 0)
-		this.sent++;
+		this.sent += 1;
 	else if (direction == 1)
-		this.received++;
+		this.received += 1;
 
   this.messsagesLogged.unshift(messageText);
   if (this.messsagesLogged.length > 5)
@@ -68,7 +69,6 @@ MessageLog.prototype.getSentMessage = function(n){
 	}
 }
 
-
 MessageLog.prototype.totalSent = function(){
 	return this.sent;
 }
@@ -76,9 +76,6 @@ MessageLog.prototype.totalSent = function(){
 MessageLog.prototype.totalReceived = function(){
 	return this.received;
 }
-
-
-
 //end your code
 
 /**
@@ -88,10 +85,8 @@ MessageLog.prototype.totalReceived = function(){
 */
 //your code here
 MessageLog.prototype.lastReceivedMessage = function lastReceivedMessage(){
-	return this.message[this.messsagesLogged.length - 1];
+	return this.messsagesLogged[this.messsagesLogged.length - 1];
 }
-
-
 //end your code
 
 /**

@@ -1,4 +1,4 @@
-/*
+/*GERALD GALE - W2015
 Input:
 a: a whole, positive number
 
