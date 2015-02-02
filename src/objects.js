@@ -8,16 +8,15 @@
 * @return {object} - the object literal
 */
 
-var random = {	
-	type: "Goldfish",
-	brand: "Pepperidge Farm", 
-	flavor: "Cheddar",
-	count: 2000,
-}
-
 function returnObjectLiteral() {
   //your code here
-  return random; //Modify ONLY this line
+  return {
+    type: "Goldfish",
+    brand: "Pepperidge Farm",
+    flavor: "Cheddar",
+    count: 2000
+  };
+  //Modify ONLY this line
   //end your code
 }
 
@@ -45,36 +44,38 @@ function returnObjectLiteral() {
 */
 
 //your code here
-function MessageLog(user){
-	this.user = user;
-	this.messsagesLogged = new Array();
-	this.sent = 0;
-	this.received = 0;
+function MessageLog(user) {
+  this.user = user;
+  this.messsagesLogged = [];
+  this.sent = 0;
+  this.received = 0;
 }
 
-MessageLog.prototype.logMessage = function(messageText, direction){
-	if (direction == 0)
-		this.sent += 1;
-	else if (direction == 1)
-		this.received += 1;
+MessageLog.prototype.logMessage = function (messageText, direction) {
+  if (direction === 0) {
+    this.sent += 1;
+  } else if (direction === 1) {
+    this.received += 1;
+  }
 
   this.messsagesLogged.unshift(messageText);
-  if (this.messsagesLogged.length > 5)
+  if (this.messsagesLogged.length > 5) {
     this.messsagesLogged.pop();
+  }
 }
 
-MessageLog.prototype.getSentMessage = function(n){
-	if(n < 5 && n >= 0){
-		return this.messsagesLogged[n];
-	}
+MessageLog.prototype.getSentMessage = function (n) {
+  if(n < 5 && n >= 0) {
+    return this.messsagesLogged[n];
+  }
 }
 
-MessageLog.prototype.totalSent = function(){
-	return this.sent;
+MessageLog.prototype.totalSent = function () {
+  return this.sent;
 }
 
-MessageLog.prototype.totalReceived = function(){
-	return this.received;
+MessageLog.prototype.totalReceived = function () {
+  return this.received;
 }
 //end your code
 
@@ -84,8 +85,8 @@ MessageLog.prototype.totalReceived = function(){
 * received.
 */
 //your code here
-MessageLog.prototype.lastReceivedMessage = function lastReceivedMessage(){
-	return this.messsagesLogged[this.messsagesLogged.length - 1];
+MessageLog.prototype.lastReceivedMessage = function lastReceivedMessage() {
+  return this.messsagesLogged[this.messsagesLogged.length - 1];
 }
 //end your code
 

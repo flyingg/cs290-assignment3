@@ -13,8 +13,8 @@
 */
 
 //your code here
-function uselessFunction(){
-	return null;
+function uselessFunction() {
+  return null;
 }
 //end your code
 
@@ -32,14 +32,16 @@ var barType = typeof bar;
 */
 
 //your code here
-bar = function(doubleArray){
-	for (var i = 0; i < doubleArray.length; i++) {
-		doubleArray[i] *= 2;
-		if (isNaN(doubleArray[i]) || doubleArray[i] == undefined) {
-		    return false;
-		}
-	}
-	return true;
+bar = function (doubleArray) {
+  var i;
+
+  for (i = 0; i < doubleArray.length; i++) {
+    doubleArray[i] *= 2;
+    if (isNaN(doubleArray[i]) || doubleArray[i] === undefined) {
+      return false;
+    }
+  }
+  return true;
 }
 //end your code
 
@@ -51,9 +53,9 @@ bar = function(doubleArray){
 * @property {string} message - the commit message
 */
 function GitLog(hash, date, message) {
-    this.hash = hash;
-    this.date = date;
-    this.message = message;
+  this.hash = hash;
+  this.date = date;
+  this.message = message;
 }
 
 /**
@@ -76,22 +78,26 @@ function GitLog(hash, date, message) {
 */
 
 //your code here
-function parseGit(logArray){
-	var startingLogArray, endingLogArray, newHash, newDate, newMessage, split1, split2;
-	var gitLogArray = new Array();
-	var lengthOf_logArray = logArray.length;
+function parseGit(logArray) {
+  var startingLogArray, endingLogArray;
+  var newHash, newDate, newMessage;
+  var split1, split2;
+  var lengthStartLogArray;
+  var gitLogArray = [];
+  var lengthOf_logArray = logArray.length;
+  var i;
 
-	for (var i = 0; i < lengthOf_logArray; i++){
-		startingLogArray = logArray[i];
-		var lengthOfStartingLogArray = startingLogArray.length;
-		split1 = startingLogArray.indexOf(' ');
-		split2 = startingLogArray.indexOf('"');
-		newHash = startingLogArray.slice(0, split1);
-		newDate = new Date(startingLogArray.slice(split1 + 1, split2 - 1));
-        newMessage = startingLogArray.slice(split2 + 1, lengthOfStartingLogArray - 1);
-		endingLogArray = new GitLog(newHash, newDate, newMessage);
-		gitLogArray.push(endingLogArray);
-	}
-	return gitLogArray;
+  for (i = 0; i < lengthOf_logArray; i++) {
+    startingLogArray = logArray[i];
+    lengthStartLogArray = startingLogArray.length;
+    split1 = startingLogArray.indexOf(' ');
+    split2 = startingLogArray.indexOf('"');
+    newHash = startingLogArray.slice(0, split1);
+    newDate = new Date(startingLogArray.slice(split1 + 1, split2 - 1));
+    newMessage = startingLogArray.slice(split2 + 1, lengthStartLogArray - 1);
+    endingLogArray = new GitLog(newHash, newDate, newMessage);
+    gitLogArray.push(endingLogArray);
+  }
+  return gitLogArray;
 }
 //end your code
